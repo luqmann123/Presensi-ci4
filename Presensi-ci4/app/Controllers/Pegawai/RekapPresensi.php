@@ -19,7 +19,7 @@ class RekapPresensi extends BaseController
         }
         $data = [
             'title' => 'Rekap Presensi',
-            'rekap_presensi' => $presensiModel
+            'rekap_presensi' => $rekap_presensi
         ];
         
 

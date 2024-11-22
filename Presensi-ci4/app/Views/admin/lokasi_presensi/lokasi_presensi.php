@@ -6,7 +6,6 @@
     <i class="lni lni-circle-plus"></i> Tambah Data
 </a>
 
-
     <table class="table" id="datatables">
         <thead>
             <tr>
@@ -30,7 +29,7 @@
                             <a href="<?= base_url('admin/lokasi_presensi/detail/' . $lok['id']) ?>" class="badge bg-success text-decoration-sm mb-2">
                                 <i class="fas fa-edit"></i> Detail
                             </a>
-                            <a href="<?= base_url('admin/lokasi_presensi/edit/' . $lok['id']) ?>" class="badge bg-warning text-decoration-sm mb-2">
+                            <a href="<?= base_url('admin/lokasi_presensi/edit/' . $lok['id']) ?>" class="badge bg-primary text-decoration-sm mb-2">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                             <a href="<?= base_url('admin/lokasi_presensi/delete/' . $lok['id']) ?>" class="badge bg-danger text-decoration-sm mb-2 tombol-hapus">
@@ -40,8 +39,6 @@
                     </tr>
                 <?php endforeach ?>
             </tbody>
-
     </table>
-
 
 <?= $this->endSection() ?>

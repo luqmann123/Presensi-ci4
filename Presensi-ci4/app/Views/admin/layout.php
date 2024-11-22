@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/2.1.8/css/dataTables.dataTables.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
     <title><?= $title ?></title>
 
@@ -41,7 +41,7 @@
     <nav class="sidebar-nav">
         <ul>
         <li class="nav-item">
-            <a href="dashboard.html" class="d-flex align-items-center">
+            <a href="<?= base_url('admin/home') ?>" class="d-flex align-items-center">
             <i class="fas fa-tachometer-alt"></i> <!-- Ikon Dashboard -->
             <span class="text ms-2">Dashboard</span>
             </a>
@@ -113,14 +113,14 @@
         </li>
 
         <li class="nav-item">
-            <a href="ketidakhadiran.html" class="d-flex align-items-center">
+            <a href="<?= base_url('admin/ketidakhadiran')?>" class="d-flex align-items-center">
             <i class="fas fa-user-times"></i> <!-- Ikon Ketidakhadiran -->
             <span class="text ms-2">Ketidakhadiran</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="logout.html" class="d-flex align-items-center">
+            <a href="<?= base_url('logout')?>" class="d-flex align-items-center">
             <i class="fas fa-sign-out-alt"></i> <!-- Ikon Logout -->
             <span class="text ms-2">Logout</span>
             </a>
@@ -157,7 +157,7 @@
                     <div class="profile-info">
                       <div class="info">
                         <div class="image">
-                          <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="" />
+                          <img src="<?= base_url('assets/images/profile/makima.png') ?>" alt="" />
                         </div>
                         <div>
                           <h6 class="fw-500 text-uppercase"><?= session()->get('username') ?></h6>
@@ -173,9 +173,9 @@
                           <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="image">
                         </div>
                         <div class="content">
-                          <h4 class="text-sm">Adam Joe</h4>
+                          <h4 class="text-sm">Elsa</h4>
                           <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
-                            href="#">Email@gmail.com</a>
+                            href="#">Elsa@gmail.com</a>
                         </div>
                       </div>
                     </li>
@@ -267,7 +267,7 @@
     <script src="<?= base_url('assets/js/polyfill.js') ?>"></script>
     <script src="<?= base_url('assets/js/main.js') ?>"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.datatables.net/2.1.8/js/dataTables.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     
 

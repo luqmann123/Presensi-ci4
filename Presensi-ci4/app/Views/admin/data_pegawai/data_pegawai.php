@@ -31,7 +31,7 @@
                         <a href="<?= base_url('admin/data_pegawai/detail/' . $peg['id']) ?>" class="badge bg-success text-decoration-sm mb-2">
                             <i class="fas fa-edit"></i> Detail
                         </a>
-                        <a href="<?= base_url('admin/data_pegawai/edit/' . $peg['id']) ?>" class="badge bg-warning text-decoration-sm mb-2">
+                        <a href="<?= base_url('admin/data_pegawai/edit/' . $peg['id']) ?>" class="badge bg-primary text-decoration-sm mb-2">
                             <i class="fas fa-edit"></i> Edit
                         </a>
                         <a href="<?= base_url('admin/data_pegawai/delete/' . $peg['id']) ?>" class="badge bg-danger text-decoration-sm mb-2 tombol-hapus">

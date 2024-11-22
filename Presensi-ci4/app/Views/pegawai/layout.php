@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
     <title><?= $title ?></title>
 
@@ -41,7 +42,7 @@
     <nav class="sidebar-nav">
         <ul>
         <li class="nav-item">
-            <a href="dashboard.html" class="d-flex align-items-center">
+            <a href="<?= base_url('pegawai/home')?>" class="d-flex align-items-center">
             <i class="fas fa-tachometer-alt"></i> <!-- Ikon Dashboard -->
             <span class="text ms-2">Dashboard</span>
             </a>
@@ -55,14 +56,14 @@
         </li>
 
         <li class="nav-item">
-            <a href="ketidakhadiran.html" class="d-flex align-items-center">
+            <a href="<?= base_url('pegawai/ketidakhadiran')?>" class="d-flex align-items-center">
             <i class="fas fa-user-times"></i> <!-- Ikon Ketidakhadiran -->
             <span class="text ms-2">Ketidakhadiran</span>
             </a>
         </li>
 
         <li class="nav-item">
-            <a href="logout.html" class="d-flex align-items-center">
+            <a href="<?= base_url('logout')?>" class="d-flex align-items-center">
             <i class="fas fa-sign-out-alt"></i> <!-- Ikon Logout -->
             <span class="text ms-2">Logout</span>
             </a>
@@ -204,10 +205,15 @@
     <script src="<?= base_url('assets/js/jvectormap.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/polyfill.js') ?>"></script>
     <script src="<?= base_url('assets/js/main.js') ?>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <script>
+       $(document).ready( function () {
+          $('#datatables').DataTable();
+      } );
+      
       $(function(){
         <?php if (session()->has('gagal')) { ?>
           Swal.fire({
@@ -216,6 +222,50 @@
           text: "<?= session()->get('gagal') ?>",
         });
           <?php } ?>
+      });
+
+      $(function(){
+        <?php if (session()->has('berhasil')) { ?>
+            const Toast = Swal.mixin({
+            toast: true,
+            position: "top-end",
+            showConfirmButton: false,
+            timer: 3000,
+            timerProgressBar: true,
+            didOpen: (toast) => {
+              toast.onmouseenter = Swal.stopTimer;
+              toast.onmouseleave = Swal.resumeTimer;
+            }
+          });
+          Toast.fire({
+            icon: "success",
+            title: "<?= $_SESSION ['berhasil'] ?>"
+          });
+          <?php } ?>
+      });
+
+      $('.tombol-hapus').on('click', function(e){
+          e.preventDefault(); // Mencegah link dieksekusi langsung
+          var getLink = $(this).attr('href');
+
+          Swal.fire({
+              title: "Anda yakin ingin menghapus?",
+              text: "Data yang anda hapus tidak akan bisa dikembalikan!",
+              icon: "warning",
+              showCancelButton: true,
+              confirmButtonColor: "#3085d6",
+              cancelButtonColor: "#d33",
+              confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+              if (result.isConfirmed) {
+                  window.location.href = getLink; // Redirect ke link setelah konfirmasi
+                  Swal.fire({
+                      title: "Deleted!",
+                      text: "Your file has been deleted.",
+                      icon: "success"
+                  });
+              }
+          });
       });
     </script>
 

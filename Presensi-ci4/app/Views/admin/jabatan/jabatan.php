@@ -23,7 +23,7 @@
                         <td><?= $no++ ?></td>
                         <td><?= esc($jab['jabatan']) ?></td>
                         <td>
-                            <a href="<?= base_url('admin/jabatan/edit/' . $jab['id']) ?>" class="badge bg-warning text-decoration-sm mb-2">
+                            <a href="<?= base_url('admin/jabatan/edit/' . $jab['id']) ?>" class="badge bg-primary text-decoration-sm mb-2">
                                 <i class="fas fa-edit"></i> Edit
                             </a>
                             <a href="<?= base_url('admin/jabatan/delete/' . $jab['id']) ?>" class="badge bg-danger text-decoration-sm mb-2 tombol-hapus">

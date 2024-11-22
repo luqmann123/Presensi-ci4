@@ -11,9 +11,7 @@
   </div>
 </form>
 
-    
-
-    <table class="table table-striped table-bordered">
+    <table class="table table-striped table-bordered" id="datatables">
         <thead>
             <tr>
                 <th>No</th>
