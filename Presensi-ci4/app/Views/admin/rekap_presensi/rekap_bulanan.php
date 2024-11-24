@@ -2,6 +2,13 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    .table th {
+    background-color:#d6d8db; /* Warna gelap */
+
+}
+</style>
+
 <!-- Form untuk filter data berdasarkan bulan dan tahun -->
 <form class="row g-3 mb-4">
     <!-- Dropdown Pilihan Bulan -->
@@ -38,6 +45,9 @@
     <div class="col-auto">
         <button type="submit" class="btn btn-primary w-100">Tampilkan</button>
     </div>
+    <div class="col-auto">
+        <button type="submit" name="excel" class="btn btn-success w-100">Export Excel</button>
+    </div>
 </form>
 
 <!-- Informasi mengenai data yang ditampilkan -->
@@ -51,8 +61,9 @@
     </span>
 </div>
 
+
 <!-- Tabel rekap data presensi -->
-<table class="table table-striped table-bordered" id="datatables">
+<table class="table" id="datatables">
     <thead>
         <tr>
             <th>No</th>

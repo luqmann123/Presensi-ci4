@@ -12,30 +12,34 @@ class Home extends BaseController
 {
     public function index()
     {
-        $lokasi_presensi = new LokasiPresensiModel();
-        $pegawai_model = new PegawaiModel();
-        $presensi_model = new PresensiModel();
-        $id_pegawai = session()->get('id_pegawai');
-        $pegawai = $pegawai_model->where('id', $id_pegawai)->first();
+        $lokasiPresensiModel = new LokasiPresensiModel();
+        $pegawaiModel = new PegawaiModel();
+        $presensiModel = new PresensiModel();
+
+        $idPegawai = session()->get('id_pegawai');
+        $pegawai = $pegawaiModel->where('id', $idPegawai)->first();
+
         $data = [
             'title' => 'Home',
-            'lokasi_presensi' => $lokasi_presensi->where('id', $pegawai['lokasi_presensi'])->first(),
-            'cek_presensi_masuk' => $presensi_model->where([
-    'id_pegawai' => $id_pegawai,
-    'tanggal_masuk' => date('Y-m-d')
-])->countAllResults(),
-
-'cek_presensi_keluar' => $presensi_model->where([
-    'id_pegawai' => $id_pegawai,
-    'tanggal_masuk' => date('Y-m-d'),
-    'tanggal_keluar !=' => '0000-00-00' // Mengecek apakah sudah presensi keluar
-])->countAllResults(),
-
-            'ambil_presensi_masuk' => $presensi_model->where('id_pegawai',$id_pegawai)->where('tanggal_masuk', date('Y-m-d'))->first(),
+            'lokasi_presensi' => $lokasiPresensiModel->where('id', $pegawai['lokasi_presensi'])->first(),
+            'cek_presensi_masuk' => $presensiModel->where([
+                'id_pegawai' => $idPegawai,
+                'tanggal_masuk' => date('Y-m-d'),
+            ])->countAllResults(),
+            'cek_presensi_keluar' => $presensiModel->where([
+                'id_pegawai' => $idPegawai,
+                'tanggal_masuk' => date('Y-m-d'),
+                'tanggal_keluar !=' => '0000-00-00', // Mengecek apakah sudah presensi keluar
+            ])->countAllResults(),
+            'ambil_presensi_masuk' => $presensiModel->where([
+                'id_pegawai' => $idPegawai,
+                'tanggal_masuk' => date('Y-m-d'),
+            ])->first(),
         ];
+
         return view('pegawai/home', $data);
     }
-
+    
     public function presensi_masuk()
     {
         $latitude_pegawai = (float) $this->request->getPost('latitude_pegawai');

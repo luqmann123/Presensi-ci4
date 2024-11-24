@@ -10,8 +10,9 @@
     justify-content: center;
   }
   #map { 
-    height: 560px;
+    height: 250px;
     width: 500px;
+    border-radius: 5px;
     margin: auto;
   }
 </style>
@@ -74,7 +75,7 @@
       <div class="card-header">Presensi Keluar</div>
       <?php if ($cek_presensi_masuk < 1): ?>
   <div class="card-body">
-    <h5 class="text-center"><i class="fas fa-check-circle"></i> Anda belum melakukan presensi masuk</h5>
+    <h5 class="text-center"></i> Anda belum melakukan presensi masuk</h5>
   </div>
 <?php elseif ($cek_presensi_keluar): ?>
   <div class="card-body">

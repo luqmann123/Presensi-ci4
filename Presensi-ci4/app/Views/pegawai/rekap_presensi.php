@@ -2,6 +2,12 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    .table th {
+    background-color:#d6d8db; /* Warna gelap */
+}
+</style>
+
 <form class="row g-3">
   <div class="col-auto">
     <input type="date" class="form-control" name="filter_tanggal">
@@ -11,7 +17,7 @@
   </div>
 </form>
 
-    <table class="table table-striped table-bordered" id="datatables">
+    <table class="table" id="datatables">
         <thead>
             <tr>
                 <th>No</th>

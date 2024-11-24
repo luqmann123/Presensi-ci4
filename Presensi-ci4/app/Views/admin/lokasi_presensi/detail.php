@@ -3,7 +3,10 @@
 <?= $this->section('content') ?>
 
 <style>
-    #map { height: 560px; }
+    #map { 
+        height: 535px; 
+        border-radius: 5px;
+    }
 </style>
 
 <div class="row">

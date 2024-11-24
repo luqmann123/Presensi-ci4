@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
     <link rel="shortcut icon" href="assets/images/favicon.svg" type="image/x-icon" />
     <title><?= $title ?></title>
 
@@ -18,12 +17,11 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
      crossorigin=""/>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/dataTables.bootstrap5.min.css">
 
-     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
-
-
   </head>
   <body>
     <!-- ======== Preloader =========== -->
@@ -116,9 +114,9 @@
                           <img src="<?= base_url('assets/images/profile/profile-image.png') ?>" alt="image">
                         </div>
                         <div class="content">
-                          <h4 class="text-sm">Adam Joe</h4>
+                          <h4 class="text-sm">Budi</h4>
                           <a class="text-black/40 dark:text-white/40 hover:text-black dark:hover:text-white text-xs"
-                            href="#">Email@gmail.com</a>
+                            href="#">Budi@gmail.com</a>
                         </div>
                       </div>
                     </li>
@@ -182,7 +180,7 @@
                 <div class="copyright text-center">
                 <p class="text-sm">
                     Made In Heaven by
-                    <a href="https://www.instagram.com/shallombiyan/" rel="nofollow" target="_blank">
+                    <a href="https://www.instagram.com/luqmann.11/" rel="nofollow" target="_blank">
                     Me
                     </a>
                 </p>
@@ -205,14 +203,30 @@
     <script src="<?= base_url('assets/js/jvectormap.min.js') ?>"></script>
     <script src="<?= base_url('assets/js/polyfill.js') ?>"></script>
     <script src="<?= base_url('assets/js/main.js') ?>"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/dataTables.bootstrap5.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
 
     <script>
-       $(document).ready( function () {
-          $('#datatables').DataTable();
-      } );
+      $(document).ready( function () {
+          $('#datatables').DataTable({
+              responsive: true,
+              pageLength: 10,
+              language: {
+                  search: "Cari:",
+                  lengthMenu: "Tampilkan _MENU_ baris",
+                  info: "Menampilkan _START_ hingga _END_ dari _TOTAL_ entri",
+                  paginate: {
+                      first: "Awal",
+                      last: "Akhir",
+                      next: "Selanjutnya",
+                      previous: "Sebelumnya"
+                  }
+              }
+          });
+      });
       
       $(function(){
         <?php if (session()->has('gagal')) { ?>

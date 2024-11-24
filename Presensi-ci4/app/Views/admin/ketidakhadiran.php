@@ -2,6 +2,12 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    .table th {
+    background-color:#d6d8db; /* Warna gelap */
+}
+</style>
+
 <table class="table" id="datatables">
     <thead>
         <tr>

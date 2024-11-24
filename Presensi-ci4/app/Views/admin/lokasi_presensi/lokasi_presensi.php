@@ -2,6 +2,12 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    .table th {
+    background-color:#d6d8db; /* Warna gelap */
+}
+</style>
+
 <a href="<?= base_url('admin/lokasi_presensi/create') ?>" class="btn btn-primary mb-2">
     <i class="lni lni-circle-plus"></i> Tambah Data
 </a>

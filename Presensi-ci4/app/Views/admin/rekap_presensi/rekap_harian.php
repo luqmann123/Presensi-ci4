@@ -2,6 +2,12 @@
 
 <?= $this->section('content') ?>
 
+<style>
+    .table th {
+    background-color:#d6d8db; /* Warna gelap */
+}
+</style>
+
 <!-- Form Filter -->
 <form class="row g-3">
     <div class="col-auto">
