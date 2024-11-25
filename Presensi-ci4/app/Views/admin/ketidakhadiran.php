@@ -29,7 +29,7 @@
                 <td><?= esc($ketidakhadiran['keterangan']) ?></td>
                 <td><?= esc($ketidakhadiran['deskripsi']) ?></td>
                 <td>
-                    <a class="badge bg-success mb-2" href="<?= base_url('file_ketidakhadiran/' . $ketidakhadiran['file']) ?>">Download</a>
+                    <a class="badge bg-primary mb-2" href="<?= base_url('file_ketidakhadiran/' . $ketidakhadiran['file']) ?>">Download</a>
                 </td>
                 <td>
                     <?php if ($ketidakhadiran['status'] == 'Pending') : ?>
@@ -39,7 +39,7 @@
                     <?php endif; ?>
                 </td>
                 <td>
-                    <a class="badge bg-primary mb-2" href="<?= base_url('admin/approved_ketidakhadiran/' . $ketidakhadiran['id']) ?>">Approved</a>
+                    <a class="badge bg-success mb-2" href="<?= base_url('admin/approved_ketidakhadiran/' . $ketidakhadiran['id']) ?>">Approved</a>
                 </td>
             </tr>
         <?php endforeach ?>

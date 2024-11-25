@@ -110,8 +110,14 @@
                 <div class="invalid-feedback"><?= $validation->getError('role') ?></div>
             </div>
             
-            <!-- Tombol untuk Submit -->
-            <button type="submit" class="btn btn-primary">Update</button>
+            <div class="d-flex justify-content-between mt-3">
+                <!-- Tombol Simpan -->
+                <button type="submit" class="btn btn-primary">Update</button>
+
+                <!-- Tombol Kembali -->
+                <a href="<?= base_url('admin/data_pegawai') ?>" class="btn btn-primary">Kembali</a>
+            </div>
+
         </form>
     </div>
 </div>

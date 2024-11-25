@@ -13,7 +13,7 @@
 </a>
 
 
-    <table class="table" id="datatables">
+    <table class="table table-responsive" id="datatables">
         <thead>
             <tr>
                 <th>No</th>

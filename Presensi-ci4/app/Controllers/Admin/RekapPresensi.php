@@ -124,7 +124,7 @@ class RekapPresensi extends BaseController
 
             $activeWorksheet->setCellValue('A1', 'REKAP PRESENSI BULANAN');
             $activeWorksheet->setCellValue('A3', 'BULAN');
-            $activeWorksheet->setCellValue('C3', $filter_bulan . $filter_tahun);
+            $activeWorksheet->setCellValue('C3', date('F Y', strtotime($filter_tahun . '-' . $filter_bulan)));
             $activeWorksheet->setCellValue('A4', 'NO');
             $activeWorksheet->setCellValue('B4', 'NAMA PEGAWAI');
             $activeWorksheet->setCellValue('C4', 'TANGGAL MASUK');

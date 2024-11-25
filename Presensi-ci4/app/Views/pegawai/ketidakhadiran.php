@@ -33,7 +33,7 @@
                     <td><?= esc($ketidakhadiran['keterangan']) ?></td>
                     <td><?= esc($ketidakhadiran['deskripsi']) ?></td>
                     <td>
-                        <a class="badge bg-success" href="<?= base_url('file_keetidakhadiran/' . $ketidakhadiran['file']) ?>">Download</a>
+                        <a class="badge bg-success" href="<?= base_url('file_ketidakhadiran/' . $ketidakhadiran['file']) ?>">Download</a>
                     </td>
                     <td><?= esc($ketidakhadiran['status']) ?></td>
                     <td>

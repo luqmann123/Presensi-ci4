@@ -74,7 +74,13 @@
                 <div class="invalid-feedback"><?= $validation->getError('jam_pulang') ?></div>
             </div>
             
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <div class="d-flex justify-content-between mt-3">
+                <!-- Tombol Simpan -->
+                <button type="submit" class="btn btn-primary">Simpan</button>
+
+                <!-- Tombol Kembali -->
+                <a href="<?= base_url('admin/lokasi_presensi') ?>" class="btn btn-primary">Kembali</a>
+            </div>
         </form>
     </div>
 </div>

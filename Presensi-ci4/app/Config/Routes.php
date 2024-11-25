@@ -55,7 +55,7 @@ $routes->post('pegawai/presensi_keluar/(:segment)', 'Pegawai\Home::presensi_kelu
 $routes->post ('pegawai/presensi_keluar_aksi/(:segment)', 'Pegawai\Home::presensi_keluar_aksi/$1', ['filter' => 'pegawaiFilter']);
 
 // Rekap Presensi
-$routes->get ('pegawai/rekap_presensi', 'Pegawai\RekapPresensi::index', ['filter' => 'pegawaiFilter']);
+$routes->get ('pegawai/rekap_presensi', 'Pegawai\RekapPresensi::rekap_presensi_pegawai', ['filter' => 'pegawaiFilter']);
 
 // Ketidakhadiran
 $routes->get ('pegawai/ketidakhadiran', 'Pegawai\Ketidakhadiran::index', ['filter' => 'pegawaiFilter']);

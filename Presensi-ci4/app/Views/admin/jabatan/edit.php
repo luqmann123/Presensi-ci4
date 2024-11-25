@@ -12,7 +12,13 @@
             </div>
             <div class="invalid-feedback"><?= $validation->getError('jabatan') ?></div>
             
-            <button type="submit" class="btn btn-primary">Simpan</button>
+            <div class="d-flex justify-content-between mt-3">
+                <!-- Tombol Simpan -->
+                <button type="submit" class="btn btn-primary">Update</button>
+
+                <!-- Tombol Kembali -->
+                <a href="<?= base_url('admin/jabatan') ?>" class="btn btn-primary">Kembali</a>
+            </div>
 
         </form>
     </div>

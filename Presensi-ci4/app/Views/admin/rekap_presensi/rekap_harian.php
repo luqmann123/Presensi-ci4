@@ -31,7 +31,7 @@
 </span>
 
 <!-- Tabel Data -->
-<table class="table table-striped table-bordered" id="datatables">
+<table class="table" id="datatables">
     <thead>
         <tr>
             <th>No</th>

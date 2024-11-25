@@ -4,7 +4,7 @@
 
 <style>
     #map { 
-        height: 535px; 
+        height: 572px; 
         border-radius: 5px;
     }
 </style>
@@ -60,6 +60,9 @@
                     <td><?= esc($lokasi_presensi['jam_pulang']) ?></td>
                 </tr>
             </table>
+            <div class="mt-3 text-end">
+            <a href="<?= base_url('admin/lokasi_presensi') ?>" class="btn btn-primary">Kembali</a>
+        </div>
         </div>
     </div>
     </div>

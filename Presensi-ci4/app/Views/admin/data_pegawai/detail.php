@@ -5,7 +5,7 @@
 <div class="card col-md-8">
     <div class="card-body">
         <table class="table">
-        <img style="border-radius: 10px" width="120 px" src="<?= base_url('profile/'. $pegawai['foto'])?>" alt="">
+            <img style="border-radius: 10px" width="120 px" src="<?= base_url('profile/'. $pegawai['foto']) ?>" alt="">
             <tr>
                 <td><strong>Nip</strong></td>
                 <td>:</td>
@@ -57,6 +57,9 @@
                 <td><?= $pegawai['role'] ?></td>
             </tr>
         </table>
+        <div class="mt-3 text-end">
+            <a href="<?= base_url('admin/data_pegawai') ?>" class="btn btn-primary">Kembali</a>
+        </div>
     </div>
 </div>
 
